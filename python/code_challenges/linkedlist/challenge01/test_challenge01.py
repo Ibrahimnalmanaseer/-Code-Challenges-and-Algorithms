@@ -3,7 +3,9 @@ from challenge01 import Node,LinkedList
 
 def test_append_1():
 
-    
+    '''
+    test append method
+    '''
     linkedList1 = LinkedList()
     node1 = Node("A")
     linkedList1.append(node1)
@@ -23,7 +25,9 @@ def test_append_1():
 
 
 def test_delete_1():
-
+    '''
+    test delete method 
+    '''
     
     linkedList1 = LinkedList()
     node1 = Node("A")
@@ -44,7 +48,9 @@ def test_delete_1():
 
 
 def test_delete_head():
-
+    '''
+    test delete method 
+    '''
     
     linkedList1 = LinkedList()
     node1 = Node(1)
@@ -65,7 +71,9 @@ def test_delete_head():
 
 
 def test_delete_last():
-
+    '''
+    test delete method 
+    '''
     
     linkedList1 = LinkedList()
     node1 = Node(1)
@@ -86,7 +94,9 @@ def test_delete_last():
 
 
 def test_delete_2():
-
+    '''
+    test delete method 
+    '''
     
     linkedList1 = LinkedList()
     node1 = Node(1)
