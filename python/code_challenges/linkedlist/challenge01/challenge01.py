@@ -8,17 +8,26 @@ class Node:
 
 
 class LinkedList:
+    '''
+    Create a link list ,Append nodes ,Delete nodes 
 
+    '''
     def __init__(self) -> None:
         
         
         self.head=None
     def append(self,node):
-           if self.head==None:
+
+        '''
+        params: node 
+        :return: append node into a link list
+
+        '''
+        if self.head==None:
 
                 self.head=node
 
-           else: 
+        else: 
                 current_node=self.head
                 while current_node.next is not None:
 
@@ -29,12 +38,18 @@ class LinkedList:
 
     def delete_node(self,node):
 
-            current=self.head
+        '''
+        params: node value
+        :return : delete node from a list 
 
-            if current.value==node:
+        '''
+
+        current=self.head
+
+        if current.value==node:
                 self.head=current.next
 
-            else:
+        else:
 
                 while current is not None:
                     if current.value == node:
@@ -46,7 +61,9 @@ class LinkedList:
 
 
     def display(self):
-
+        '''
+        :return: a list of linked list elements
+        '''
         output=[]
         
             
