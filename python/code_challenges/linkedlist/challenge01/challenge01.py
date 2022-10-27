@@ -1,4 +1,7 @@
 # Write here the code challenge solution
+from os import remove
+
+
 class Node:
 
     def __init__(self,node) -> None:
@@ -36,7 +39,27 @@ class LinkedList:
                 current_node.next=node
 
 
-    def delete_node(self,node):
+
+    def display(self):
+        '''
+        :return: a list of linked list elements
+        '''
+        
+        
+        new_arr=[]    
+        
+        current = self.head
+        while current is not None:
+            
+              new_arr.append(current.value)  
+              current = current.next
+              
+        return new_arr
+
+
+
+
+def delete_node(node):
 
         '''
         params: node value
@@ -44,53 +67,23 @@ class LinkedList:
 
         '''
 
-        current=self.head
+        nextNode = node.next
+        node.value = nextNode.value
+        node.next = nextNode.next
+        nextNode.next = None
+        del(nextNode)
 
-        if current.value==node:
-                self.head=current.next
-
-        else:
-
-                while current is not None:
-                    if current.value == node:
-                        break
-                    previous_node = current
-                    current = current.next
                 
-                previous_node.next = current.next
-
-
-    def display(self):
-        '''
-        :return: a list of linked list elements
-        '''
-        output=[]
-        
-            
-        
-        current = self.head
-        while current is not None:
-            output.append(current.value)
                 
-            current = current.next
-
-        return output
 
 
-if __name__ == "__main__":
-    linkedList1 = LinkedList()
-    node1 = Node("A")
-    linkedList1.append(node1)
 
-    node2 = Node("B")
-    linkedList1.append(node2)
-
-    node3 = Node("C")
-    linkedList1.append(node3)
-
-    node4 = Node("D")
-    linkedList1.append(node4)
-    linkedList1.delete_node('C')
-
-
-    linkedList1.display()
+linkedList1 = LinkedList()
+node1 = Node(1)
+linkedList1.append(node1)
+node2 = Node(2)
+linkedList1.append(node2)
+node3 = Node(3)
+linkedList1.append(node3)
+delete_node(node2)   
+print(linkedList1.display())
