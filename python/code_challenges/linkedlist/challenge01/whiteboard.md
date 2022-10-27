@@ -11,7 +11,6 @@ Create a delete function inside a linked list class which accept a node value, t
 ## Test Cases
 
 - linkedlist = [1,2,3] , node = 2  , return [1,3]
-- linkedlist = [1] , node = 1 , return []
 - linkedlist = [1,5,9] , node = 1 , return [5,9]
 - linkedlist = [1,5,9] , node = 9 , return [1,5]
 
@@ -23,9 +22,9 @@ Create a delete function inside a linked list class which accept a node value, t
 
 ## Algorithm
 
-- create a class accept node value
-- create  linked list class that can create a linked list ,- - using appending method that accepts a node.
-- create a method inside a class that accepts a node value, which needed to be deleted from the linked list.
+
+
+- create a function inside a class that accepts a node value, which needed to be deleted from the linked list.
 
 - create a method to display the final updated linked list.
 
@@ -33,73 +32,27 @@ Create a delete function inside a linked list class which accept a node value, t
 ## Big O
 
 
-In append or delete methods , will loop through the list elements, the time complexity and space will depends on length of the linked list .
+1 node needs to be updated, and the time complexity is constant.
 
 
-**Time** :  O(n)
+**Time** :  O(1)
 
-**Space**: O(n)
+**Space**: O(1)
 
 
 
 ## Code
 ```
 
-class Node:
-    def __init__(self,node) -> None:
-        self.value=node
-        self.next=None
+def delete_node(node):
 
+   
 
-class LinkedList:
-
-    def __init__(self) -> None:
-
-
-        self.head=None
-    def append(self,node):
-           if self.head==None:
-
-                self.head=node
-
-           else:
-                current_node=self.head
-                while current_node.next is not None:
-
-                    current_node=current_node.next
-
-                current_node.next=node
-
-
-    def delete_node(self,node):
-            current=self.head
-
-            if current.value==node:
-                self.head=current.next
-
-            else:
-
-                while current is not None:
-                    if current.value == node:
-                        break
-                    previous_node = current
-                    current = current.next
-
-                previous_node.next = current.next
-
-
-    def display(self):
-        output=[]
-
-
-
-        current = self.head
-        while current is not None:
-            output.append(current.value)
-
-            current = current.next
-
-        return output
+        nextNode = node.next
+        node.value = nextNode.value
+        node.next = nextNode.next
+        nextNode.next = None
+        del(nextNode)
 
 
 ```
