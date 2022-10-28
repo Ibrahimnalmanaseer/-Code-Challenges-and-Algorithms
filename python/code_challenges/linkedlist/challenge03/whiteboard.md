@@ -44,25 +44,30 @@ the time complexity and space will depends on the linked list length , as the fu
 ## Code
 ```
 def remove_nth(head,n):
-    
+
     new_arr=[head]
-    output_list=[]
+    
     while new_arr[-1].next:
         new_arr.append(new_arr[-1].next)
     
     current = head
-    if current.next:
 
-        while current!= new_arr[-+n]:
 
-            current=current.next
+    if head==new_arr[-+n]:
 
-        current.next = new_arr[-+n].next
-    del(new_arr[-+n])
+        head=head.next
+        
+    else:
+        if current.next:
 
-    for i in new_arr:
-        output_list.append(i.value)
-    return output_list
+            while current.next!= new_arr[-+n]:
+
+                current=current.next
+
+            current.next = new_arr[-+n].next
+        
+        
+    return head
 ```
 
 
