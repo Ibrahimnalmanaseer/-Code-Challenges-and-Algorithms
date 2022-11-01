@@ -14,8 +14,8 @@ create a validation function which accepts String, the function will check each 
 - input : s = "[(hello)()]" , True
 - input : s = "[{(())}]", True
 - input :s = "]", False
-
-
+- input :s = "", False
+- input :s = "hello", False
 
 
 ## Visualize
