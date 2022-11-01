@@ -12,7 +12,11 @@ def validate_Parentheses(s):
 
         char_open_stack=[]
        
-   
+
+        if len(s)==0:
+
+            return False
+            
         for i in s:
 
             if i in open_char:

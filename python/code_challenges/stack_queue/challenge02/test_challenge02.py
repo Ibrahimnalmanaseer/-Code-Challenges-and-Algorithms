@@ -15,3 +15,15 @@ def test_validate_Parentheses_3():
     actual=validate_Parentheses("[(hello)()]")
     expect=True
     assert actual==expect
+
+
+def test_validate_Parentheses_4():
+    actual=validate_Parentheses("hello")
+    expect=False
+    assert actual==expect
+
+
+def test_validate_Parentheses_5():
+    actual=validate_Parentheses("")
+    expect=False
+    assert actual==expect
