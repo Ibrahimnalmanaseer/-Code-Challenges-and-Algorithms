@@ -10,11 +10,17 @@ class Node:
         self.right=None
         self.left=None
 
+
     
 
 class Tree:
 
-    new_arr1=[]
+
+    def __init__(self) -> None:
+         
+         self.tree_list=[]
+
+
     def binary_tree(self, pre_order, in_order):
         '''
         params: pre_order list , in_order list
@@ -35,57 +41,68 @@ class Tree:
                 return root
        
        
-   
 
+    def display_tree(self,root):
 
+                '''
+                params: root
+                    
+                return : all the roots values as a list 
 
-
-
-
-
-
-
-
-
-
-
-
-def display_tree(root):
-
-
-    
-    
-    if root :
-
-        if root.left:
+                '''
+                
             
-            new_arr.append(root.left.value)
-            new_arr.append(root.right.value)
-          
+                if not root:
 
-        else:
+                    return ['null']
 
-            if not root.left:
-                new_arr.append('null')
-        
-            if not root.right:
-                new_arr.append('null')
+                    
+                    
+                    
+                    
+                
+                
+                if root :
 
-        display_tree(root.left)  
-        display_tree(root.right)
-   
+                    if root.left:
 
+                        
+                        self.tree_list.append(root.left.value)
+                        try:
+                            self.tree_list.append(root.right.value)
+                        except AttributeError:
+                            self.tree_list.append('null')
+                    
+
+                    else:
+
+                        if not root.left:
+                            self.tree_list.append('null')
+                    
+                        if not root.right:
+                            self.tree_list.append('null')
+
+                    self.display_tree(root.left)  
+                    self.display_tree(root.right)   
+                
+               
+
+                return self.tree_list 
+
+
+
+# rrr=Tree()
+
+
+# root=rrr.binary_tree([2,1],[1,2])
+
+# try:
     
-       
+#     rrr.tree_list=[root.value]
 
+# except AttributeError:
+#     rrr.tree_list=[root]
 
-        
+# finally:
 
-
-    return new_arr  
-
-rrr=Tree()
-root=rrr.binary_tree([2,1,4],[1,2,4])
-
-new_arr=[root.value]
-print(display_tree(root))
+#     print(rrr.display_tree(root))
