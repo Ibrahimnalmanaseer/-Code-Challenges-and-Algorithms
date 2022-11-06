@@ -10,11 +10,11 @@ create a class which return a binary tree based on the given list of pre-order a
 
 ## Test Cases
 
-- input : in-order=[9,3,15,20,7] pre-order=[3,9,20,15,7], Output: [3,9,20,null,null,15,7]
-- input : in-order=[-1] pre-order=[-1], Output:[-1]
-- input : in-order=[1,2] pre-order=[2,1], Output: [2,1,null]
-- input : in-order=[] pre-order=[], Output: [null]
-- input : in-order=['a','b','c'] pre-order=['b','a','c'], Output: ['b','a','c']
+- input : in-order=[9,3,15,20,7] pre-order=[3,9,20,15,7], Output: [3,9,20,null,null,15,7,null,null,null,null]
+- input : in-order=[-1] pre-order=[-1], Output:[-1,null,null]
+- input : in-order=[1,2] pre-order=[2,1], Output: [2,1,null.null,null]
+- input : in-order=[] pre-order=[], Output: ['null']
+
 
 
 
