@@ -54,11 +54,7 @@ class Tree:
             
                 if not root:
 
-                    return ['null']
-
-                    
-                    
-                    
+                    return ['null']               
                     
                 
                 
